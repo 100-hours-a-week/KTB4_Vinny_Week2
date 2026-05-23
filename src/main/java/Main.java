@@ -1,5 +1,3 @@
-import javax.swing.*;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +7,7 @@ public class Main {
         User user = new User(200, 100, 0);
         GameManager gm = new GameManager(user);
         Farm farm = new Farm("",4);
+        Music music = new Music("farm2.mp3",true);
 
         Carrot carrot = new Carrot();
         Potato potato = new Potato();
@@ -28,6 +27,7 @@ public class Main {
         Fertilizer fertilizer = new Fertilizer("성장 단축 비료", 5);
 
         System.out.println("농장 시뮬레이션을 시작합니다!");
+        music.start();
         System.out.print("농장 이름을 작성해주세요: ");
         farm.farmName = sc.nextLine();
         System.out.println();
@@ -60,31 +60,31 @@ public class Main {
             }
 
             boolean correctNumber = true;
-            while(correctNumber){
-            System.out.println("할 일을 선택해주세요 ");
-            System.out.println("1. 작물 심기 \n2. 수확하기 \n3. 비료 주기\n4. 현재 농장 정보 보기");
-            int userSelect = sc.nextInt();
-            System.out.println();
-            switch (userSelect) {
-                case 1:
-                    correctNumber = false;
-                    gm.plantCrop(tiles, crops);
-                    break;
-                case 2:
-                    correctNumber = false;
-                    gm.havestCrop(tiles, crops);
-                    break;
-                case 3:
-                    correctNumber = false;
-                    gm.useFertilizer(tiles);
-                    break;
-                case 4:
-                    gm.currentStatus(user, tiles);
-                    break;
-                default:
-                    System.out.println("올바르지 않은 선택 입니다. 다시 선태갷주세요.");
-                    break;
-            }
+            while(correctNumber) {
+                System.out.println("할 일을 선택해주세요 ");
+                System.out.println("1. 작물 심기 \n2. 수확하기 \n3. 비료 주기\n4. 현재 농장 정보 보기");
+                int userSelect = sc.nextInt();
+                System.out.println();
+                switch (userSelect) {
+                    case 1:
+                        correctNumber = false;
+                        gm.plantCrop(tiles, crops);
+                        break;
+                    case 2:
+                        correctNumber = false;
+                        gm.havestCrop(tiles, crops);
+                        break;
+                    case 3:
+                        correctNumber = false;
+                        gm.useFertilizer(tiles);
+                        break;
+                    case 4:
+                        gm.currentStatus(user, tiles);
+                        break;
+                    default:
+                        System.out.println("올바르지 않은 선택 입니다. 다시 선태갷주세요.");
+                        break;
+                }
             }
             gm.nextDay(user, tiles);
 
@@ -94,8 +94,5 @@ public class Main {
                 break;
             }
         }
-
-
-
     }
 }
