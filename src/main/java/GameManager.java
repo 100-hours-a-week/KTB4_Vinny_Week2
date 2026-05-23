@@ -2,9 +2,6 @@ import java.util.Scanner;
 
 public class GameManager {
     private User user;
-    private Farm farm;
-    private Crop crop;
-    private Fertilizer fertilizer;
     Scanner sc = new Scanner(System.in);
 
     public GameManager(User user) {

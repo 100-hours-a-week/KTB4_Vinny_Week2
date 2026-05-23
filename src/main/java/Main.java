@@ -38,9 +38,9 @@ public class Main {
         System.out.println();
 
         System.out.println("작문은 감자, 당근, 오이 3가지로");
-        System.out.printf("%s: 성장일 %d일, 심을 때 %d원, 팔 때 %d원\n", carrot.cropName, carrot.requiredGrowDays, carrot.cost, carrot.sellPrice);
-        System.out.printf("%s: 성장일 %d일, 심을 때 %d원, 팔 때 %d원\n", potato.cropName, potato.requiredGrowDays, potato.cost, potato.sellPrice);
-        System.out.printf("%s: 성장일 %d일, 심을 때 %d원, 팔 때 %d원\n", cucumber.cropName, cucumber.requiredGrowDays, cucumber.cost, cucumber.sellPrice);
+        System.out.printf("%s: 성장일 %d일, 심을 때 %d원, 팔 때 %d원\n", carrot.name, carrot.requiredGrowDays, carrot.cost, carrot.sellPrice);
+        System.out.printf("%s: 성장일 %d일, 심을 때 %d원, 팔 때 %d원\n", potato.name, potato.requiredGrowDays, potato.cost, potato.sellPrice);
+        System.out.printf("%s: 성장일 %d일, 심을 때 %d원, 팔 때 %d원\n", cucumber.name, cucumber.requiredGrowDays, cucumber.cost, cucumber.sellPrice);
         System.out.println("이 필요합니다");
         System.out.println("수확 시 자동으로 판매됩니다,");
         System.out.println();
