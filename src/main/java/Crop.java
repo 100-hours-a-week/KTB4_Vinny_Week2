@@ -13,6 +13,10 @@ public class Crop {
         this.sellPrice = sellPrice;
     }
 
+    public int  getCropId() {
+        return cropId;
+    }
+
     public String getName(){
         return this.name;
     }

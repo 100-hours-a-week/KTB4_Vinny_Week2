@@ -10,7 +10,7 @@ public class GameService {
     Carrot carrot = new Carrot();
     Potato potato = new Potato();
     Cucumber cucumber = new Cucumber();
-    Fertilizer fertilizer = new Fertilizer("성장 쑥쑥 비료", 2);
+    Fertilizer fertilizer = new Fertilizer("성장 쑥쑥 비료", 5);
 
     Tile[] tiles = new Tile[farm.size];
     Crop[] crops = new Crop[3];
@@ -29,17 +29,14 @@ public class GameService {
         }
 
         music.start();
-        System.out.println("=========농장 시뮬레이션을 시작합니다!=========");
+        outputView.gameStart();
         inputView.writeFarmName(sc, farm);
         outputView.gameInfo(crops, user, farm);
 
         while (true) {
             boolean actionSuccess = false;
             checkGameOver();
-            System.out.println("할 일을 선택해주세요 ");
-            for (Menu menu : Menu.values()) {
-                System.out.println(menu.getCode() + ". " + menu.getTitle());
-            }
+            outputView.gameMenu();
 
             int userSelect = Validator.validateInt(sc, 0, Menu.values().length-1);
             System.out.println();
@@ -48,7 +45,7 @@ public class GameService {
                     outputView.gameInfo(crops, user, farm);
                     break;
                 case 1:
-                    actionSuccess =  farm.plantCrop(sc, tiles, crops, user, farm);
+                    actionSuccess = farm.plantCrop(sc, tiles, crops, user, farm);
                     break;
                 case 2:
                     if (harvestAvailable()) {
