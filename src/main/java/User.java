@@ -9,10 +9,6 @@ public class User {
         this.currentDay = currentDay;
     }
 
-    public String toString() {
-        return "User(goalMoney=" + goalMoney + ", money=" + money + ", currentDay=" + currentDay + ")";
-    }
-
     public int getGoalMoney() {
         return goalMoney;
     }
@@ -21,8 +17,14 @@ public class User {
         return money;
     }
 
-    public void setMinusMoney(int money) {
-        this.money -= money;
+    public boolean setMinusMoney(int money) {
+        if(this.money < money){
+            System.out.println("금액이 부족합니다");
+            return false;
+        } else {
+            this.money -= money;
+            return true;
+        }
     }
 
     public void setPlusMoney(int money) {

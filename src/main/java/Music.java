@@ -25,6 +25,7 @@ public class Music extends Thread {
 
     public void close(){
         isLoop = false;
+        System.out.println("음악을 종료합니다.");
         player.close();
         this.interrupt();
     }

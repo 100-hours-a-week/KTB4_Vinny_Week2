@@ -14,19 +14,20 @@ public class Tile {
         this.remainingDay = remainingDay;
     }
 
+    public int getTileId() {
+        return tileId;
+    }
+
     public int getCropId() {
         return cropId;
+    }
+
+    public int getRemainingDay() {
+        return remainingDay;
     }
 
     public void setCropId(int cropId) {
         this.cropId = cropId;
     }
 
-    public String noCropString(){
-        return tileId+1 + "번째 타일에는 심어진 작물이 없습니다.";
-    }
-
-    public String toString(){
-        return tileId+1 + "번째 타일에는 " + cropId+1 +"작물이 심어져있고 자랄 때까지 " + remainingDay + "일 남았습니다.";
-    }
 }

@@ -1,9 +1,9 @@
 public class Crop {
-    final String name;
-    private int cropId;
-    public int requiredGrowDays;
-    public int cost;
-    public int sellPrice;
+    private final String name;
+    private final int cropId;
+    private final int requiredGrowDays;
+    private final int cost;
+    private final int sellPrice;
 
     Crop(int cropId, String name, int requiredGrowDays, int cost, int sellPrice) {
         this.cropId = cropId;
@@ -11,5 +11,21 @@ public class Crop {
         this.requiredGrowDays = requiredGrowDays;
         this.cost = cost;
         this.sellPrice = sellPrice;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public int getRequiredGrowDays(){
+        return this.requiredGrowDays;
+    }
+
+    public int getCost(){
+        return this.cost;
+    }
+
+    public int getSellPrice(){
+        return this.sellPrice;
     }
 }
