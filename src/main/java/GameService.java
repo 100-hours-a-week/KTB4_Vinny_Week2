@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GameService {
     Scanner sc = new Scanner(System.in);
-    User user = new User(200, 1, 1);
+    User user = new User(200, 100, 1);
     Farm farm = new Farm("",4);
     Music music = new Music("farm.mp3",true);
     InputView inputView = new InputView();

@@ -19,7 +19,7 @@ public class OutputView {
     public void currentStatus( Tile[] tiles, Crop[] crops,User user) {
         System.out.println("현재 농장 정보를 알려드리겠습니다");
         System.out.println("현재 소지금은 " + user.getMoney() + "원 입니다.");
-        System.out.println(user.getCurrentDay());
+        System.out.printf("%d만큼 지났습니다.\n",user.getCurrentDay());
 
         for (int i = 0; i < tiles.length; i++) {
             if (tiles[i].getCropId() == -1) {
