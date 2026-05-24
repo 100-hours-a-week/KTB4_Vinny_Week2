@@ -37,9 +37,11 @@ public class GameService {
             boolean actionSuccess = false;
             checkGameOver();
             System.out.println("할 일을 선택해주세요 ");
-            System.out.println("0. 게임 설명 다시보기\n1. 작물 심기 \n2. 수확하기 \n3. 비료 주기\n4. 현재 농장 정보 보기\n5. 음악 종료하기");
+            for (Menu menu : Menu.values()) {
+                System.out.println(menu.getCode() + ". " + menu.getTitle());
+            }
 
-            int userSelect = Validator.validateInt(sc, 0, 5);
+            int userSelect = Validator.validateInt(sc, 0, Menu.values().length-1);
             System.out.println();
             switch (userSelect) {
                 case 0:

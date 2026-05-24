@@ -38,7 +38,6 @@ public class Farm {
     }
 
     public boolean useFertilizer(Tile[] tiles, User user, Fertilizer fertilizer) {
-        //TODO: 개별 타일로 구현
         boolean available = user.setMinusMoney(fertilizer.getCost());
         if (available == true) {
             System.out.printf("비료를 사용하셨습니다. 소지금 %d원이 감소합니다. 모든 작물의 수확일이 하루 감소합니다.", fertilizer.getCost());
